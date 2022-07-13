@@ -28,7 +28,8 @@
     text-align: center;
     border: 2px solid #94b49f;
     background-color: #cee5d0;
-    margin: 0; }
+    margin: 0;
+    text-decoration: none; }
 
 .body {
   background-color: antiquewhite; }
