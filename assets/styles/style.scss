@@ -1,0 +1,205 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Nunito", sans-serif;
+    transition: 200ms;
+}
+
+$color-1: #eadb9d;
+$color-2: #feffe4;
+$color-3: #e7e3c5;
+$color-4: #54777d;
+$color-5: #cee5d0;
+$color-6: #94b49f;
+$color-7: #545454;
+
+/*Moblie*/
+.header {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    background-color: $color-2;
+    border-bottom: 1px solid $color-5;
+    &__logo {
+        height: 50%;
+        border-radius: 100%;
+    }
+    &__title {
+        width: 50%;
+    }
+    &__comprar {
+        width: auto;
+        font-weight: 600;
+        font-size: small;
+        color: $color-7;
+        border-radius: 16px;
+        text-align: center;
+        border: 2px solid $color-6;
+        background-color: $color-5;
+        margin: 0;
+        text-decoration: none;
+    }
+}
+
+.body {
+    background-color: antiquewhite;
+}
+
+.main {
+    display: flex;
+    width: 90%;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem auto;
+    &__container {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+
+        &__swiper {
+            margin: 0 2rem;
+            max-height: fit-content;
+            img {
+                height: 200px;
+                border-radius: 16px;
+            }
+        }
+
+        &__cards {
+            width: 98%;
+            height: auto;
+            margin: 1rem auto;
+            &__title {
+                font-size: small;
+            }
+            &__box {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+
+                &__card {
+                    border: 1px solid $color-6;
+                    border-radius: 16px;
+                    width: 30%;
+                    height: 60%;
+                    background-color: $color-3;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: space-between;
+                }
+                &__cardbody {
+                    img {
+                        width: 100%;
+                        max-height: fit-content;
+                        border-radius: 16px 16px 0 0;
+                        border-bottom: 2px solid $color-6;
+                    }
+                    p {
+                        text-align: center;
+                        color: $color-7;
+                        margin: 0;
+                    }
+                }
+            }
+        }
+
+        &__map {
+            width: 90%;
+            iframe {
+                max-width: 100%;
+                border-radius: 16px;
+            }
+            &__title {
+                font-size: small;
+            }
+        }
+    }
+}
+
+/*Tablet*/
+@media only screen and (min-width: 768px) {
+    .header {
+        &__logo {
+            height: 100%;
+        }
+        &__comprar {
+            width: 10%;
+        }
+    }
+
+    .main__container__map {
+        margin: 2rem auto;
+    }
+}
+
+/*Desktop*/
+@media only screen and (min-width: 1024px) {
+    .header {
+        height: 180px;
+        &__comprar {
+            font-size: medium;
+            cursor: pointer;
+        }
+        &__comprar:hover {
+            background-color: #6d8b78;
+            color: #feffe4;
+        }
+    }
+
+    .main {
+        &__container {
+            &__swiper {
+                img {
+                    height: 550px;
+                }
+            }
+            &__cards {
+                margin-top: 6rem;
+                &__title{
+                    font-size: large;
+                    font-weight: 600;
+                    margin-bottom: 3rem;
+                }
+                &__box {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-around;
+                    &__card {
+                     width: auto;
+                     
+                    }
+                    &__card:hover{
+                        transform: translateY(-10px);
+                    }
+                    &__cardbody{
+                        p{
+                            font-size: large;
+                            font-weight: 600;
+                            margin: 1rem auto;
+                        }
+                    }
+                }
+            }
+            &__map{
+                width: 98%;
+                &__title{
+                    font-size: large;
+                    font-weight: 600;
+                    margin-bottom: 3rem;
+                }
+                &__location{
+                    width: 80%;
+                    text-align: center;
+                    margin: 0 auto;
+                }
+            }
+        }
+    }
+}
+
+
