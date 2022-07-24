@@ -24,8 +24,11 @@ $color-7: #545454;
     justify-content: space-around;
     background-color: $color-2;
     border-bottom: 1px solid $color-5;
+    &__anc {
+        height: 100%;
+    }
     &__logo {
-        height: 50%;
+        height: 100%;
         border-radius: 100%;
     }
     &__title {
@@ -80,7 +83,7 @@ $color-7: #545454;
             &__box {
                 display: flex;
                 flex-direction: row;
-                justify-content: space-between;
+                justify-content: space-evenly;
 
                 &__card {
                     border: 1px solid $color-6;
@@ -154,11 +157,115 @@ $color-7: #545454;
 }
 
 /*Listing*/
-.main{
-    &__listing{
-        height: 1000px;
+.product-list {
+    background-color: #f9f9f9;
+    width: 85%;
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-radius: 10px;
+
+    &__product-card {
+        width: 100%;
+        height: auto;
+        border-radius: 16px;
+        margin: 8px 16px;
+        box-sizing: border-box;
+        box-shadow: 0 4px 24px;
+        word-wrap: break-word;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        &__title {
+            justify-content: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: auto;
+            text-align: center;
+            color: $color-7;
+            p {
+                margin: 1rem;
+                color: #19264a;
+                font-size: 13px;
+                font-weight: 600;
+                line-height: 16px;
+                margin-bottom: 2.5px;
+            }
+            img {
+                width: 100%;
+                border-radius: 16px 16px 0 0;
+            }
+        }
+        &__details {
+            width: 70%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px auto;
+            &__price {
+                margin: 1rem;
+                color: #708d8c;
+                font-size: 17px;
+                font-weight: bold;
+                line-height: 22px;
+                margin: 0;
+            }
+        }
+        &__button {
+            align-items: center;
+            background-color: $color-6;
+            border: 2px solid $color-4;
+            border-radius: 14px;
+            color: $color-2;
+            cursor: inherit;
+            display: flex;
+            font-family: Muli, sans-serif;
+            font-size: 15px;
+            font-weight: 700;
+            height: 40px;
+            justify-content: center;
+            width: 40%;
+            margin: 1rem auto;
+            &:hover{
+                background-color: $color-4;
+            }
+        }
+
+        &:hover {
+            transition: 200ms;
+            transform: translateY(-2px);
+            color: black;
+        }
     }
 }
+.cart-list {
+    width: 80%;
+    margin: 2rem auto;
+       &__item{
+           list-style: none;
+           display: flex;
+           align-items: center;
+           justify-content: space-between;
+           border-radius: 16px;
+           border: 1px solid #576f72;
+           margin-bottom: 1rem;
+           &__title{
+                margin: auto 2rem;
+                text-align: center;
+           }
+           &__price{
+               margin: auto 0;
+           }
+           img{
+            margin-right: 1rem;
+           }
+       }
+   }
 /*Tablet*/
 @media only screen and (min-width: 768px) {
     /*Home*/
@@ -175,6 +282,11 @@ $color-7: #545454;
         margin: 2rem auto;
     }
     /*Listing*/
+    .product-list {
+        &__product-card {
+            width: 35%;
+        }
+    }
 }
 
 /*Desktop*/
@@ -241,4 +353,89 @@ $color-7: #545454;
         }
     }
     /*Listing*/
+    .product-list {
+        background-color: #f9f9f9;
+        width: 85%;
+        margin: 2rem auto;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    
+        &__product-card {
+            width: 30%;
+            height: auto;
+            border-radius: 16px;
+            margin: 8px 16px;
+            box-sizing: border-box;
+            box-shadow: 0 4px 24px;
+            word-wrap: break-word;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+    
+            &__title {
+                justify-content: center;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: auto;
+                text-align: center;
+                color: $color-7;
+                p {
+                    margin: 1rem;
+                    color: #19264a;
+                    font-size: 13px;
+                    font-weight: 600;
+                    line-height: 16px;
+                    margin-bottom: 2.5px;
+                }
+                img {
+                    width: 100%;
+                    border-radius: 16px 16px 0 0;
+                }
+            }
+            &__details {
+                width: 70%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin: 20px auto;
+                &__price {
+                    margin: 1rem;
+                    color: $color-4;
+                    font-size: 17px;
+                    font-weight: bold;
+                    line-height: 22px;
+                    margin: 0;
+                }
+            }
+            &__button {
+                align-items: center;
+                background-color: $color-6;
+                border: 2px solid $color-4;
+                border-radius: 14px;
+                color: $color-2;
+                cursor: inherit;
+                display: flex;
+                font-family: Muli, sans-serif;
+                font-size: 15px;
+                font-weight: 700;
+                height: 40px;
+                justify-content: center;
+                width: 40%;
+                margin: 1rem auto;
+                &:hover{
+                    background-color: $color-4;
+                }
+            }
+    
+            &:hover {
+                transition: 200ms;
+                transform: translateY(-2px);
+                color: black;
+            }
+        }
+    }
 }
