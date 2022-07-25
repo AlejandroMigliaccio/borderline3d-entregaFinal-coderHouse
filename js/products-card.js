@@ -19,8 +19,8 @@ export const loadList = (products)=>{
         productList.appendChild(card);
         const button = document.getElementById(`button${e.id}`)
         button.addEventListener('click', ()=>{
-            addCart(e);
             confirmado();
+            addCart(e);
         })
     });
 
