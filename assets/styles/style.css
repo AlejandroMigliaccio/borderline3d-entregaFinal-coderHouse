@@ -236,6 +236,24 @@
       color: antiquewhite;
       font-weight: 700; }
 
+.pagar {
+  align-items: center;
+  background-color: #94b49f;
+  border: 2px solid #54777d;
+  border-radius: 14px;
+  color: #feffe4;
+  cursor: inherit;
+  display: flex;
+  font-family: Muli, sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  height: 40px;
+  justify-content: center;
+  width: 40%;
+  margin: 1rem auto; }
+  .pagar:hover {
+    background-color: #54777d; }
+
 /*Tablet*/
 @media only screen and (min-width: 768px) {
   /*Home*/

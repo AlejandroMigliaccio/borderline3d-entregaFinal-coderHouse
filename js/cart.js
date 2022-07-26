@@ -3,10 +3,13 @@ import { Item } from "./class/Item.js";
 let cartBasq = [];
 let itId
 cartBasq.length < 0 ? itId = 0 : itId = cartBasq.length;
+
+
 export const addCart = (prod) => {
     let item = new Item(prod.name, prod.price, prod.id = itId);
     cartBasq.push(item);
     saveCart();
+  
     const cartList = document.getElementById("cart-list");
     let cartItem = document.createElement("li");
     cartItem.id = itId;
@@ -26,7 +29,7 @@ const saveCart = () => {
     }
 }
 
-const cart = (data) => {
+export const cart = (data) => {
     const { name, price, id } = data;
     return `<h2 class="cart-list__item__title">${name}</h2>
             <p class="cart-list__item__price">$${price}</p>
@@ -34,7 +37,7 @@ const cart = (data) => {
 }
 
 export const reloadCart = () => {
-    
+
     let reCart
     if (reCart = JSON.parse(localStorage.getItem("cart"))) {
         reCart.forEach(i => { cartBasq.push(i) });
@@ -43,7 +46,7 @@ export const reloadCart = () => {
 }
 
 const retunedSaveCart = () => {
-    
+
     let itId = 0
     if (cartBasq.length > 0) {
         const cartList = document.getElementById("cart-list");
@@ -64,7 +67,7 @@ const retunedSaveCart = () => {
 }
 
 const delItem = (p) => {
-    
+
     const remuveItem = document.getElementById(`${p}`);
     let na = cartBasq.filter((item) => item.id !== p)
     remuveItem.remove();
@@ -89,7 +92,14 @@ const wipe = document.getElementById("clean-all");
 wipe.addEventListener('click', () => {
     cartBasq = [];
     localStorage.removeItem('cart');
-    console.log(cartBasq);
     location.reload()
 })
-console.log(cartBasq.length)
+
+export const total = ()=>{
+    debugger
+    let total = 0
+    cartBasq.forEach(i =>{
+        total+= i.price;
+    })
+    return total;
+}

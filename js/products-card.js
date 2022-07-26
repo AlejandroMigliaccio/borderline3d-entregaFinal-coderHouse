@@ -21,6 +21,7 @@ export const loadList = (products)=>{
         button.addEventListener('click', ()=>{
             confirmado();
             addCart(e);
+            
         })
     });
 

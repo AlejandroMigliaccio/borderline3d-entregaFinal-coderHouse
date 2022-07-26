@@ -300,6 +300,25 @@ $color-7: #545454;
         }
     }
 }
+.pagar{
+    align-items: center;
+    background-color: $color-6;
+    border: 2px solid $color-4;
+    border-radius: 14px;
+    color: $color-2;
+    cursor: inherit;
+    display: flex;
+    font-family: Muli, sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    height: 40px;
+    justify-content: center;
+    width: 40%;
+    margin: 1rem auto;
+    &:hover {
+        background-color: $color-4;
+    }
+}
 /*Tablet*/
 @media only screen and (min-width: 768px) {
     /*Home*/
