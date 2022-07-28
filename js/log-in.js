@@ -1,4 +1,4 @@
-const resumen = [];
+let resumen = [];
 
 const total = (a) => {
     let reCart
@@ -38,6 +38,8 @@ const pagar = document.getElementById("pagar");
 pagar.addEventListener('click', (event) => {
     event.preventDefault();
     resumen == 0 ? error() : confirmPer();
+    resumen = [];
+    localStorage.removeItem('cart');
 })
 
 total(resumen);
@@ -59,4 +61,5 @@ nameIn.onchange = () => {
     validation.name = nameIn.checkValidity();
     checkValidity();
 }
+
 
