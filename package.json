@@ -1,0 +1,25 @@
+{
+  "name": "borderline3d-entregafinal-coderhouse",
+  "version": "1.0.0",
+  "description": "ecommer borderline3d",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-css": "node-sass --include-path scss assets/styles/style.scss assets/styles/style.css",
+    "watch-css": "nodemon -e scss -x \"npm run build-css\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlejandroMigliaccio/borderline3d-entregaFinal-coderHouse.git"
+  },
+  "author": "ADM",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlejandroMigliaccio/borderline3d-entregaFinal-coderHouse/issues"
+  },
+  "homepage": "https://github.com/AlejandroMigliaccio/borderline3d-entregaFinal-coderHouse#readme",
+  "devDependencies": {
+    "node-sass": "^7.0.1",
+    "nodemon": "^2.0.19"
+  }
+}
